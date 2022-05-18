@@ -1,6 +1,16 @@
+/**
+ * Represents a word comprised of any number of letters
+ * Each letter is represented by the Letter class and stored in a linked list
+ * @author gsotelo
+ */
+
 public class Word {
     private LinearNode<Letter> firstLetter = null;
 
+    /**
+     * Constructor creates a linked list with each letter being stored in a node
+     * @param letters an array containing all letters of a word represented by the Letter class
+     */
     public Word(Letter[] letters) {
         LinearNode<Letter> intNode;
 
@@ -11,6 +21,10 @@ public class Word {
         }
     }
 
+    /**
+     * Overrides default toString method to display word formatted with decorators
+     * @return each letter of a word with decorators corresponding to the mystery word
+     */
     public String toString() {
         LinearNode<Letter> node = firstLetter;
         String word = "Word: ";
@@ -22,6 +36,11 @@ public class Word {
         return word;
     }
 
+    /**
+     * Labels each letter of this word's linked list based on relation to the mystery word
+     * @param mystery the mystery word that this word is compared to
+     * @return true if word has identical order and content to mystery word, false otherwise
+     */
     public boolean labelWord(Word mystery) {
         LinearNode<Letter> mysteryNodeHead = mystery.firstLetter;
         LinearNode<Letter> mysteryNode = mystery.firstLetter;
